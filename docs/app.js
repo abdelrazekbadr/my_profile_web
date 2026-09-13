@@ -82,7 +82,7 @@
     var empDims = c.employer.logoW && c.employer.logoH ? ' width="' + c.employer.logoW + '" height="' + c.employer.logoH + '"' : "";
     host.innerHTML =
       '<div class="layer">' +
-        "<h3>Who pays me, the whole time</h3>" +
+        "<h3>My main contractor, throughout</h3>" +
         '<div class="employer">' +
           (c.employer.logo ? '<div class="emp-logo"><img alt="' + c.employer.name + ' logo" src="' + c.employer.logo + '"' + empDims + ' loading="lazy"></div>' : "") +
           "<h4>" + c.employer.name + " — " + c.employer.where + "</h4>" +

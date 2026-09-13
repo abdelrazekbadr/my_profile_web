@@ -90,7 +90,7 @@ var CHAIN = {
     logoW: 240,
     logoH: 60,
     years: "2014 \u2192 2026, continuous",
-    note: "My employer for twelve years. Laplace places me as a dedicated outsourced engineering resource \u2014 the company I work inside changes, the employer does not."
+    note: "My main contractor for 12 years \u2014 including 10 years on-site in Saudi Arabia, placed with Qwaed Technologies. The company I work inside changes; the contract does not."
   },
   placements: [
     {
