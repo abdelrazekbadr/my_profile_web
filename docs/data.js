@@ -2,11 +2,41 @@
    All page content lives here. Edit this file to update the site.
    --------------------------------------------------------------- */
 
+/* Experience at a glance — years per role and per engineering area.
+   Both panels share one 0–scaleMax axis so bar lengths compare across them. */
+var EXPERIENCE = {
+  scaleMax: 16,
+  groups: [
+    {
+      id: "lead",
+      title: "Leadership & management",
+      items: [
+        { label: "Technical lead", years: 8, note: ".NET tech lead 2 yrs, then Odoo & frontend tech lead 6 yrs",
+          parts: [{ label: ".NET", years: 2 }, { label: "Odoo & frontend", years: 6 }] },
+        { label: "Branch manager", years: 6, note: "Laplace Software, Egypt branch — from hiring the team to project delivery" },
+        { label: "Business & systems analysis", years: 6 },
+        { label: "Software architecture", years: 4 }
+      ]
+    },
+    {
+      id: "eng",
+      title: "Engineering",
+      items: [
+        { label: "Software engineering", years: 16 },
+        { label: "Frontend web", years: 9 },
+        { label: "Mobile apps", years: 8 },
+        { label: "ERP systems", years: 6, note: "Odoo" },
+        { label: "AI & automation", years: 1 }
+      ]
+    }
+  ]
+};
+
 var TIMELINE = [
   {
     era: "now",
     flag: "now",
-    years: "2025 — present",
+    years: "Nov 2025 — present",
     role: "Technical Team Lead / Software Architect",
     org: "Laplace Software, placed with SAMTIA and Advanced Photonix — remote, Egypt",
     note: "A different sister-company group from the 2015–2025 placement",
@@ -23,9 +53,9 @@ var TIMELINE = [
   {
     era: "ksa",
     flag: "odoo",
-    years: "2015 — 2025",
+    years: "May 2015 — Oct 2025",
     role: "Senior Software Engineer → Software Architect / Team Lead",
-    org: "Laplace Software, placed with Qwaed Technologies and Genius Valley — on-site, KSA",
+    org: "Laplace Software, placed with Qwaed Technologies and Genius Valley — on-site, Riyadh, KSA",
     note: "Outsourced by Laplace to Qwaed Technologies and Genius Valley",
     points: [
       "Led architecture and delivery of enterprise systems for the customers of Qwaed Technologies and Genius Valley — the Ministry of Interior, the Ministry of Economy and Planning, Saudi Telecom Company and King Saud University — document management, visitor management, access control, and time and attendance.",
@@ -40,12 +70,12 @@ var TIMELINE = [
   {
     era: "early",
     flag: "",
-    years: "2014 — 2015",
+    years: "Nov 2013 — May 2015",
     role: "Software Engineer",
     org: "Laplace Software — Egypt",
     note: "Where the employer relationship starts",
     points: [
-      "Built enterprise products in C#/.NET with DevExpress XAF and SQL Server, including a university laboratory system for Kafr El-Sheikh University, a stock management platform and a property management platform."
+      "Built ERP desktop systems in C#/.NET with DevExpress XAF and SQL Server, including a university laboratory system for Kafr El-Sheikh University, a stock management platform and a property management platform."
     ],
     more: "Model-driven development with XAF turned out to transfer almost directly to Odoo's declarative model layer years later — same instinct, different framework.",
     tags: ["C#/.NET", "DevExpress XAF", "SQL Server"]
@@ -53,12 +83,12 @@ var TIMELINE = [
   {
     era: "early",
     flag: "",
-    years: "2013 — 2014",
+    years: "Dec 2012 — Nov 2013",
     role: "Software Engineer",
-    org: "ACS, branch of a KSA-based group — Egypt",
+    org: "Arabian Computer Services (ACS) — Egypt",
     note: "",
     points: [
-      "Developed modules of an enterprise healthcare system using C#, Silverlight, WCF and Oracle under an MVVM architecture."
+      "Developed modules of an enterprise healthcare system for hospitals in Saudi Arabia using C#, Silverlight, WCF and Oracle under an MVVM architecture."
     ],
     more: "First exposure to enterprise architecture on a system with real clinical users and a hospital group behind it.",
     tags: ["C#", "Silverlight", "WCF", "Oracle", "MVVM"]
@@ -66,16 +96,43 @@ var TIMELINE = [
   {
     era: "early",
     flag: "",
-    years: "2010 — 2013",
+    years: "Nov 2011 — Nov 2012",
     role: "Software Developer",
-    org: "Genius Making International Academy and independent projects — Egypt",
+    org: "Genius Making Center Academy — Egypt",
     note: "",
     points: [
-      "Delivered desktop and data-driven applications in C#/.NET with SQL Server for education, defense and medical-training clients, from requirements gathering through deployment and support.",
-      "Completed the nine-month ITI Professional Software Development Diploma in 2013, alongside educational applications and 2D games for children's skill development."
+      "Built educational applications for children's skill development — 2D educational games, interactive learning tools and administrative applications — in C#/.NET with SQL Server.",
+      "Completed the nine-month ITI Professional Software Development Diploma (Information Technology Institute) in 2012."
+    ],
+    more: "",
+    tags: ["C#/.NET", "SQL Server", "2D games"]
+  },
+  {
+    era: "early",
+    flag: "",
+    years: "Oct 2010 — Oct 2011",
+    role: "Programmer — military service",
+    org: "Republican Guard, IT & Operations Department — Egypt",
+    note: "",
+    points: [
+      "Developed panorama applications, tracking systems and internal IT applications supporting operational activities."
+    ],
+    more: "",
+    tags: ["C#/.NET"]
+  },
+  {
+    era: "early",
+    flag: "",
+    years: "2010",
+    role: "Software Developer — graduate",
+    org: "Mansoura University and first client projects — Egypt",
+    note: "",
+    points: [
+      "Built a face-recognition system in C# with OpenCV as the BSc graduation project, and became an IEEE contributor through this work.",
+      "Delivered first desktop applications in C#/.NET and SQL Server for education and medical-training clients."
     ],
     more: "Working end to end — gathering the requirement, building it, deploying it, supporting it — from the first year is why client-facing delivery never felt like a separate skill later.",
-    tags: ["C#/.NET", "SQL Server", "Desktop applications"]
+    tags: ["C#", "OpenCV", "SQL Server"]
   }
 ];
 
@@ -89,13 +146,13 @@ var CHAIN = {
     logo: "logos/laplace.png",
     logoW: 240,
     logoH: 60,
-    years: "2014 \u2192 2026, continuous",
-    note: "My main contractor for 12 years \u2014 including 10 years on-site in Saudi Arabia, placed with Qwaed Technologies. The company I work inside changes; the contract does not."
+    years: "Nov 2013 \u2192 present, continuous",
+    note: "My main contractor for over 12 years \u2014 including 10 years on-site in Riyadh, placed with Qwaed Technologies and Genius Valley \u2014 and the company whose Egypt branch I have managed for six years, from hiring the team to project delivery. The company I work inside changes; the contract does not."
   },
   placements: [
     {
-      years: "2015 \u2013 2025",
-      mode: "On-site, Kingdom of Saudi Arabia",
+      years: "May 2015 \u2013 Oct 2025",
+      mode: "On-site, Riyadh, Kingdom of Saudi Arabia",
       label: "First placement",
       companies: [
         { name: "Qwaed Technologies", note: "Formal employer of record during the on-site period", logo: "logos/qwaed.png", dark: false, logoW: 170, logoH: 40 },
@@ -110,7 +167,7 @@ var CHAIN = {
       ]
     },
     {
-      years: "2025 \u2013 present",
+      years: "Nov 2025 \u2013 present",
       mode: "Remote from Egypt",
       label: "Second placement \u2014 a different group of sister companies",
       companies: [
@@ -128,28 +185,28 @@ var PROJECTS = [
   {
     name: "SAMTIA — B2B e-commerce platform",
     kind: "Enterprise",
-    who: "SAMTIA, KSA · Software Architect & Team Lead · 2025 – present",
+    who: "SAMTIA, KSA · Software Architect & Team Lead · Nov 2025 – present",
     text: "An Odoo + Next.js commerce ecosystem integrating ERP, buyer portal, account-manager operations, pricing, orders, permissions and reporting.",
     tags: ["Odoo", "Python", "Next.js", "TypeScript", "PostgreSQL", "Odoo.sh", "Azure DevOps", "Docker"]
   },
   {
     name: "Access Management System (AMS) suite",
     kind: "Enterprise",
-    who: "KSA enterprise clients · Software Architect & Team Lead · 2024 – 2025",
-    text: "A productized modular Odoo suite — ams_base, ams_bs, ams_vm, ams_mep and OTP login — covering visitor management, access control, time and attendance, MDU and IoT school sound systems, packaged with a Docker release pipeline and Suprema biometric integration.",
+    who: "KSA enterprise clients · Technical Team Lead · 2024 – 2025",
+    text: "A productized modular Odoo suite — ams_base, ams_bs, ams_vm, ams_mep and OTP login — covering visitor management, access control, time and attendance, MDU and IoT school sound systems, with Omada and RUCKUS network integrations, packaged with a Docker release pipeline and Suprema biometric integration.",
     tags: ["Odoo", "Python", "OWL", "JavaScript", "PostgreSQL", "React Native", "Docker", "BioStar2 API"]
   },
   {
     name: "Biometric time &amp; attendance",
     kind: "Enterprise",
-    who: "King Saud University and STC · 2015 – 2025",
+    who: "King Saud University 2015 – 2023 · STC 2018 – 2025",
     text: "10,000 employees across 300 fingerprint devices at King Saud University, and 500 employees across 50 devices at STC. Device protocols, enrolment, sync recovery and payroll-grade reporting.",
     tags: ["BioStar2 API", "Odoo", "C#/.NET", "SQL Server", "PostgreSQL"]
   },
   {
     name: "Document &amp; task management, iPad",
     kind: "Enterprise",
-    who: "Ministry of Interior, KSA · Software Engineer & Team Lead · 2020 – 2023",
+    who: "Ministry of Interior, KSA · 2015 – 2025",
     text: "Secure iPad document circulation and task management for ministerial executive leadership, backed by a WCF service layer and enterprise identity controls.",
     tags: ["C#", "WCF", "DevExpress XAF", "Ionic", "Angular", "SQL Server", "iOS"]
   },
@@ -170,7 +227,7 @@ var PROJECTS = [
   {
     name: "Visitor management",
     kind: "Enterprise",
-    who: "Ministry of Economy and Planning, KSA · 2015 – 2025",
+    who: "Ministry of Economy and Planning, KSA · 2024 – 2025",
     text: "Visitor registration, hosting approval, badge issuance and full visit audit history for a government site, alongside an access control system tied to organisational identity.",
     tags: ["C#/.NET", "Odoo", "SQL Server", "DevExpress XAF"]
   },
@@ -220,7 +277,7 @@ var SKILLS = [
   },
   {
     group: "Leadership & delivery",
-    items: ["Technical leadership", "Software architecture", "Solution architecture", "Odoo techno-functional delivery", "System design", "Agile / Scrum", "Team mentoring", "Code review", "Stakeholder management", "Release management", "Requirements workshops", "UAT in Arabic and English", "Technical documentation"]
+    items: ["Technical leadership", "Branch management", "Hiring & recruitment", "Performance management", "Business & systems analysis", "Software architecture", "Solution architecture", "Odoo techno-functional delivery", "System design", "Agile / Scrum", "Team mentoring", "Code review", "Stakeholder management", "Release management", "Requirements workshops", "UAT in Arabic and English", "Technical documentation"]
   },
   {
     group: "Earlier-career technologies",

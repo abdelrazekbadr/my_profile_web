@@ -31,7 +31,7 @@
     "addressCountry": "EG"
   },
   "sameAs": ["https://www.linkedin.com/in/abdelrazek-e-badr-13663558"],
-  "knowsAbout": ["Odoo ERP", "Next.js", "Python", "Software Architecture", "Technical Leadership", "B2B E-Commerce", "PostgreSQL", "React Native"]
+  "knowsAbout": ["Odoo ERP", "Next.js", "Python", "Software Architecture", "Technical Leadership", "Engineering Management", "B2B E-Commerce", "PostgreSQL", "React Native"]
 }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -107,30 +107,89 @@ a{color:inherit}
 .hero .meta a{text-decoration:none;border-bottom:1px solid #45566F;padding-bottom:1px}
 .hero .meta a:hover{color:var(--white);border-bottom-color:var(--brass)}
 
-/* hero rail figure */
-.railfig{margin-top:clamp(40px,6vw,64px);padding-bottom:clamp(40px,6vw,64px)}
-.railfig svg{width:100%;height:auto;display:block;overflow:visible}
-.railfig .cap{font-size:13.5px;color:#7E8FA8;margin-top:14px;max-width:62ch}
-
+/* ---------- experience at a glance (hero) ---------- */
+.hero .xp{margin-top:clamp(28px,4.5vw,44px);padding:0}
+.xp h2{font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#8FA0B8}
+.xp h2 span{text-transform:none;letter-spacing:0;font-weight:400;color:#6F819B;margin-left:8px}
+.xp-grid{display:grid;gap:14px;margin-top:14px}
+@media(min-width:900px){.xp-grid{grid-template-columns:1fr 1fr}}
+.xp-panel{margin:0;background:var(--ink-soft);border:1px solid var(--rail);border-radius:10px;padding:18px 20px 14px}
+.xp-panel{--c:#BF8724}
+.xp-panel.xp-eng{--c:#1FA596}
+.xp-panel figcaption{display:flex;align-items:center;gap:9px;font-size:15px;font-weight:600;color:var(--white);margin-bottom:10px}
+.xp-panel figcaption i{width:12px;height:12px;border-radius:3px;background:var(--c)}
+.xp-rows{list-style:none;margin:0;padding:0}
+.xp-row,.xp-axis{display:grid;grid-template-columns:minmax(7.5em,12.5em) 1fr 3.4em;align-items:center;gap:0 12px}
+.xp-row{position:relative;padding:6px 6px;margin:0 -6px;border-radius:6px;outline-offset:0}
+.xp-row:hover,.xp-row:focus-visible{background:rgba(255,255,255,.045)}
+.xp-label{font-size:14.5px;color:#DDE4EE;line-height:1.3}
+.xp-label small{display:block;font-size:12px;color:#8FA0B8;margin-top:2px}
+.xp-track,.xp-ticks{position:relative;height:14px;
+  background:repeating-linear-gradient(90deg,rgba(255,255,255,.09) 0 1px,transparent 1px 25%);
+  background-size:calc(100% + 1px) 100%}
+.xp-bar{position:absolute;left:0;top:0;bottom:0;width:calc(var(--v) * 100%);
+  background:var(--c);border-radius:0 4px 4px 0;transform-origin:left center}
+.xp-seg{left:calc(var(--x) * 100%);width:calc(var(--v) * 100% - 2px);border-radius:0}
+.xp-seg:last-child{border-radius:0 4px 4px 0;width:calc(var(--v) * 100%)}
+.xp-seg-old{background:#E3B563}
+.xp-val{font-size:15px;font-weight:600;color:var(--white);font-variant-numeric:tabular-nums;white-space:nowrap}
+.xp-val em{font-style:normal;font-weight:400;font-size:12.5px;color:#8FA0B8}
+.xp-axis{margin-top:4px}
+.xp-ticks{height:16px;background:none}
+.xp-ticks span{position:absolute;top:0;transform:translateX(-50%);font-size:11.5px;color:#6F819B;font-variant-numeric:tabular-nums}
+.xp-tip{position:absolute;right:calc(3.4em + 12px);bottom:calc(100% - 2px);z-index:3;pointer-events:none;
+  background:#F4F6F9;color:var(--ink);font-size:12.5px;padding:5px 9px;border-radius:6px;white-space:nowrap;
+  box-shadow:0 4px 14px rgba(0,0,0,.35);opacity:0;transform:translateY(3px);transition:opacity .15s,transform .15s}
+.xp-row:hover .xp-tip,.xp-row:focus-visible .xp-tip{opacity:1;transform:none}
+@media (hover:none){.xp-tip{display:none}}
+@media(max-width:520px){
+  .xp-panel{padding:16px 14px 12px}
+  .xp-row,.xp-axis{grid-template-columns:minmax(6.5em,9.5em) 1fr 2.9em;gap:0 9px}
+  .xp-label{font-size:13.5px}
+  .xp h2 span{display:block;margin:4px 0 0}
+  .xp-ticks .minor{display:none}
+}
 @media (prefers-reduced-motion:no-preference){
-  .railfig .draw{stroke-dasharray:990;stroke-dashoffset:990;animation:drawrail 1.5s .2s cubic-bezier(.2,.7,.3,1) forwards}
+  .xp-bar{animation:xpgrow .9s .15s cubic-bezier(.2,.7,.3,1) both}
+  @keyframes xpgrow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
 }
-@keyframes drawrail{to{stroke-dashoffset:0}}
-.railmini{list-style:none;margin:0;padding:0;display:grid;gap:0}
-.railmini li{
-  position:relative;padding:0 0 22px 26px;border-left:2px solid var(--rail);margin-left:6px;
+@media (forced-colors:active){.xp-bar,.xp-panel figcaption i{background:CanvasText}}
+
+/* hero rail figure — proportional career timeline (2010 → now) */
+.railfig{margin:clamp(32px,5vw,48px) 0 0;padding:0}
+.hero > .wrap{padding-bottom:clamp(40px,6vw,64px)}
+.railfig .cap{font-size:13.5px;color:#7E8FA8;margin-top:18px;max-width:62ch}
+.tl2{position:relative;padding-top:34px}
+.tl2-bracket{position:absolute;top:0;left:22.9%;right:0;height:26px;
+  border:1.5px solid #3F6F6B;border-bottom:0;border-radius:6px 6px 0 0}
+.tl2-bracket span{position:absolute;left:10px;top:-10px;padding:0 8px;background:var(--ink);
+  font-size:12.5px;color:#8FB5B0;white-space:nowrap}
+.tl2-band{display:flex;gap:2px;height:14px}
+.tl2-band span{height:100%;flex:0 0 calc(var(--w) * 1% - 1.5px);background:var(--c);border-radius:3px;transform-origin:left center}
+.tl2-axis{position:relative;height:22px;margin-top:8px}
+.tl2-axis span{position:absolute;top:0;transform:translateX(-50%);font-size:12.5px;color:#8FA0B8;font-variant-numeric:tabular-nums;white-space:nowrap}
+.tl2-axis span:first-child{transform:none}
+.tl2-axis span:last-child{transform:translateX(-100%);color:var(--white);font-weight:600}
+.tl2-phases{list-style:none;margin:22px 0 0;padding:0;display:grid;gap:12px;grid-template-columns:1fr}
+@media(min-width:620px){.tl2-phases{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1000px){.tl2-phases{grid-template-columns:repeat(4,1fr)}}
+.tl2-phases li{background:var(--ink-soft);border:1px solid var(--rail);border-top:3px solid var(--c);border-radius:8px;padding:14px 16px}
+.tl2-phases i{display:block;font-style:normal;font-size:12.5px;color:#8FA0B8;font-variant-numeric:tabular-nums}
+.tl2-phases b{display:block;font-family:var(--serif);font-size:17px;font-weight:600;color:var(--white);margin-top:4px;line-height:1.25}
+.tl2-phases span{display:block;font-size:13.5px;color:#9FB0C6;margin-top:6px;line-height:1.45}
+.tl2-phases ul{list-style:none;margin:8px 0 0;padding:0;display:grid;gap:5px}
+.tl2-phases ul li{display:grid;grid-template-columns:4.2em 1fr;gap:0 6px;background:none;border:0;padding:0;font-size:13px;color:#9FB0C6;line-height:1.4}
+.tl2-phases ul em{display:block;font-style:normal;font-variant-numeric:tabular-nums;color:#7E8FA8}
+.tl2-phases .now{float:right;font-style:normal;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);background:var(--c);border-radius:99px;padding:1px 8px;margin:0}
+.p1{--c:#3987E5}.p2{--c:#D95926}.p3{--c:#1FA596}.p4{--c:#BF8724}
+.tl2-bracket em{font-style:normal}
+@media(max-width:619px){.tl2-axis .mid{display:none}.tl2-bracket span{font-size:11.5px}.tl2-bracket em{display:none}}
+@media (prefers-reduced-motion:no-preference){
+  .tl2-band span{animation:tlgrow .7s cubic-bezier(.2,.7,.3,1) both}
+  .tl2-band .p2{animation-delay:.25s}.tl2-band .p3{animation-delay:.4s}.tl2-band .p4{animation-delay:.9s}
+  @keyframes tlgrow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
 }
-.railmini li:last-child{border-left-color:transparent;padding-bottom:0}
-.railmini li::before{
-  content:"";position:absolute;left:-8px;top:5px;width:13px;height:13px;border-radius:50%;
-  background:var(--ink);border:2.5px solid var(--rail);
-}
-.railmini li:last-child::before{background:var(--brass);border-color:var(--brass)}
-.railmini b{display:block;font-family:var(--serif);color:var(--white);font-size:18px;font-weight:600}
-.railmini span{display:block;font-size:14px;color:#8FA0B8;margin-top:2px}
-.railmini i{font-style:normal;font-size:13px;color:#7E8FA8;font-variant-numeric:tabular-nums}
-@media(min-width:760px){.railmini{display:none}}
-@media(max-width:759px){.railfig svg{display:none}}
+@media (forced-colors:active){.tl2-band span{background:CanvasText}}
 
 /* ---------- sections ---------- */
 section{padding:clamp(60px,8vw,104px) 0}
@@ -384,53 +443,44 @@ footer .fine{margin-top:38px;font-size:13.5px;color:#73849C;border-top:1px solid
       <a href="resume.pdf" download>Download résumé (PDF)</a>
     </p>
 
+    <figure class="railfig">
+      <div class="tl2" role="img" aria-label="Career timeline 2010 to present, drawn to scale: foundations in Egypt 2010 to November 2013; Laplace Software in Egypt November 2013 to May 2015; ten years on-site in Riyadh, Saudi Arabia, May 2015 to October 2025; SAMTIA and Advanced Photonix, remote, November 2025 to present. Laplace Software has been the employer continuously since November 2013.">
+        <div class="tl2-bracket" aria-hidden="true"><span>Laplace Software · 12+ years<em>, continuous since Nov 2013</em></span></div>
+        <div class="tl2-band" aria-hidden="true">
+          <span class="p1" style="--w:22.9"></span><span class="p2" style="--w:9.2"></span><span class="p3" style="--w:62.2"></span><span class="p4" style="--w:5.7"></span>
+        </div>
+        <div class="tl2-axis" aria-hidden="true">
+          <span style="left:0">2010</span><span style="left:22.9%">2013</span><span class="mid" style="left:32.1%">2015</span><span style="left:94.3%" class="mid">2025</span><span style="left:100%">Now</span>
+        </div>
+      </div>
+      <ol class="tl2-phases">
+        <li class="p1"><i>2010 – Nov 2013</i><b>Foundations, Egypt</b>
+          <ul>
+            <li><em>2010</em> Graduation project — face recognition in C#, IEEE contributor</li>
+            <li><em>2010–11</em> Military service — programmer, IT &amp; operations</li>
+            <li><em>2011–12</em> Educational apps &amp; 2D games, Genius Making Center Academy</li>
+            <li><em>2012</em> ITI diploma — 9-month software development</li>
+            <li><em>2012–13</em> Enterprise healthcare system, ACS</li>
+          </ul></li>
+        <li class="p2"><i>Nov 2013 – May 2015 · 1.5 years</i><b>Laplace Software, Egypt</b><span>Joined Laplace — ERP desktop systems in C#/.NET and DevExpress XAF: university lab, stock and property management</span></li>
+        <li class="p3"><i>May 2015 – Oct 2025 · 10 years</i><b>Riyadh, Saudi Arabia — on-site</b><span>Placed by Laplace with Qwaed Technologies and Genius Valley — ministries, STC, King Saud University; moved to Odoo in 2020</span></li>
+        <li class="p4"><i>Nov 2025 – present <em class="now">Now</em></i><b>SAMTIA &amp; Advanced Photonix — remote</b><span>B2B e-commerce on Odoo + Next.js</span></li>
+      </ol>
+      <figcaption class="cap">Career timeline — foundations in Egypt → Laplace (Nov 2013) → ten years on-site in Riyadh → SAMTIA B2B platform.</figcaption>
+    </figure>
+
+    <section class="xp" aria-labelledby="xpTitle">
+      <h2 id="xpTitle">Experience at a glance <span>years, on one shared 0–16 scale</span></h2>
+      <div class="xp-grid" id="xp"></div>
+    </section>
+
     <div class="highlights" aria-label="Key numbers">
       <div class="hi"><a href="#work"><b>5,880<span class="unit">downloads</span></b><span>ZATCA e-invoicing module, published on the Odoo App Store</span></a></div>
       <div class="hi"><a href="#career"><b>10,000<span class="unit">employees</span></b><span>Largest biometric system shipped, 300 fingerprint devices</span></a></div>
-      <div class="hi"><a href="#career"><b>4–8<span class="unit">engineers</span></b><span>Distributed team led across Odoo, React Native and QA</span></a></div>
+      <div class="hi"><a href="#career"><b>4–8<span class="unit">engineers</span></b><span>Distributed team hired and led across Odoo, frontend, React Native and QA</span></a></div>
       <div class="hi"><a href="#skills"><b>v15 → v19</b><span>Odoo versions worked across, including major-upgrade migrations</span></a></div>
     </div>
 
-    <figure class="railfig">
-      <svg viewBox="0 0 1000 172" role="img" aria-labelledby="railTitle railDesc">
-        <title id="railTitle">Career rail, 2010 to 2026</title>
-        <desc id="railDesc">A continuous line from 2010 to 2026 with four phases: foundations in Egypt to 2014, joining Laplace Software in 2014, ten years of on-site enterprise delivery in Saudi Arabia to 2025, and the SAMTIA B2B commerce platform from 2025.</desc>
-        <line class="draw" x1="8" y1="96" x2="992" y2="96" stroke="#2A3A52" stroke-width="2"/>
-        <g fill="#7E8FA8" font-family="IBM Plex Sans, sans-serif" font-size="13">
-          <text x="8" y="128">2010</text>
-          <text x="255" y="128">2014</text>
-          <text x="510" y="128">2015</text>
-          <text x="905" y="128">2025</text>
-        </g>
-        <g fill="#DDE4EE" font-family="Fraunces, Georgia, serif" font-size="17" font-weight="600">
-          <text x="8" y="66">Foundations</text>
-          <text x="255" y="66">Laplace Software</text>
-          <text x="510" y="66">Saudi Arabia, on-site</text>
-          <text x="827" y="66">SAMTIA</text>
-        </g>
-        <g fill="#7E8FA8" font-family="IBM Plex Sans, sans-serif" font-size="13">
-          <text x="8" y="150">C#/.NET, healthcare, ITI</text>
-          <text x="255" y="150">Enterprise desktop</text>
-          <text x="510" y="150">Via Qwaed &amp; Genius Valley — ministries, STC, KSU</text>
-          <text x="790" y="150">SAMTIA &amp; Advanced Photonix</text>
-        </g>
-        <g>
-          <circle cx="8" cy="96" r="6" fill="#0E1622" stroke="#2A3A52" stroke-width="2.5"/>
-          <circle cx="255" cy="96" r="6" fill="#0E1622" stroke="#2A3A52" stroke-width="2.5"/>
-          <circle cx="510" cy="96" r="6" fill="#0E1622" stroke="#2E6F6A" stroke-width="2.5"/>
-          <circle cx="905" cy="96" r="7" fill="#B4801F"/>
-        </g>
-        <rect x="255" y="86" width="737" height="3" rx="1.5" fill="#2E6F6A" opacity=".55"/>
-        <text x="262" y="80" fill="#5E7F85" font-family="IBM Plex Sans, sans-serif" font-size="12">Laplace Software, continuous since 2014</text>
-      </svg>
-      <ul class="railmini">
-        <li><i>2010 – 2014</i><b>Foundations</b><span>C#/.NET, enterprise healthcare, ITI diploma</span></li>
-        <li><i>2014 – 2015</i><b>Laplace Software</b><span>Enterprise desktop systems, Egypt</span></li>
-        <li><i>2015 – 2025</i><b>Saudi Arabia, on-site</b><span>Outsourced to Qwaed Technologies and Genius Valley — building for their customers: ministries, STC, King Saud University</span></li>
-        <li><i>2025 – 2026</i><b>SAMTIA &amp; Advanced Photonix</b><span>A different sister-company group — B2B e-commerce on Odoo + Next.js</span></li>
-      </ul>
-      <figcaption class="cap">Career timeline — foundations → Laplace → ten years on-site in KSA → SAMTIA B2B platform.</figcaption>
-    </figure>
   </div>
 </header>
 
@@ -445,7 +495,7 @@ footer .fine{margin-top:38px;font-size:13.5px;color:#73849C;border-top:1px solid
 
     <div class="eras" role="tablist" aria-label="Career phases">
       <button class="era" role="tab" data-era="all" aria-selected="true">Everything</button>
-      <button class="era" role="tab" data-era="now" aria-selected="false">2025 – 2026 · SAMTIA</button>
+      <button class="era" role="tab" data-era="now" aria-selected="false">2025 – present · SAMTIA</button>
       <button class="era" role="tab" data-era="ksa" aria-selected="false">2015 – 2025 · Saudi Arabia</button>
       <button class="era" role="tab" data-era="early" aria-selected="false">2010 – 2015 · Foundations</button>
     </div>
@@ -458,13 +508,13 @@ footer .fine{margin-top:38px;font-size:13.5px;color:#73849C;border-top:1px solid
   <div class="wrap">
     <div class="sechead">
       <h2>Delivery model</h2>
-      <p>Over 12 years delivering as the outsourced partner to ministries and a national telecom taught me what makes a vendor relationship work from both sides — I manage vendors today knowing exactly how the relationship looks from the other end. One employer since 2014, two placements with separate sister-company groups, and their customers at the end.</p>
+      <p>Over 12 years with Laplace Software — ten of them on-site in Riyadh as the outsourced partner to ministries and a national telecom — taught me what makes a vendor relationship work from both sides — I manage vendors today knowing exactly how the relationship looks from the other end. One employer since November 2013, two placements with separate sister-company groups, and their customers at the end.</p>
     </div>
 
     <div class="chain" id="chain"></div>
 
     <div class="strip" style="margin-top:34px">
-      <div class="stat"><b>12</b><span>Years with one employer</span></div>
+      <div class="stat"><b>12+</b><span>Years with one employer</span></div>
       <div class="stat"><b>10</b><span>Enterprise clients delivered to</span></div>
       <div class="stat"><b>10,000</b><span>Employees on the largest system built</span></div>
       <div class="stat"><b>5,880</b><span>Downloads of the ZATCA module on the Odoo App Store</span></div>
@@ -539,7 +589,7 @@ footer .fine{margin-top:38px;font-size:13.5px;color:#73849C;border-top:1px solid
       <div>
         <h3>Education</h3>
         <ul>
-          <li><b>Professional Diploma, Software Development</b><span>Information Technology Institute (ITI), PSD Department — 2013, nine-month programme</span></li>
+          <li><b>Professional Diploma, Software Development</b><span>Information Technology Institute (ITI), PSD Department — 2012, nine-month programme</span></li>
           <li><b>Pre-Master's Studies, Computer Science</b><span>Mansoura University — 2012</span></li>
           <li><b>BSc Computer and Information Systems</b><span>Mansoura University — 2010, final-year grade 90%</span></li>
         </ul>
@@ -556,7 +606,8 @@ footer .fine{margin-top:38px;font-size:13.5px;color:#73849C;border-top:1px solid
         <ul>
           <li><b>Arabic</b><span>Native — client workshops, UAT and on-site deployment run in Arabic</span></li>
           <li><b>English</b><span>Professional working proficiency</span></li>
-          <li><b>Remote since 2025</b><span>Leading a distributed team from Egypt across Egyptian and Saudi time zones</span></li>
+          <li><b>Branch manager, Laplace Software Egypt</b><span>Six years managing the branch remotely — from hiring the team to project delivery</span></li>
+          <li><b>Fully remote role since 2025</b><span>Leading a distributed team from Egypt across Egyptian and Saudi time zones</span></li>
         </ul>
       </div>
     </div>
@@ -567,7 +618,7 @@ footer .fine{margin-top:38px;font-size:13.5px;color:#73849C;border-top:1px solid
 
 <footer id="contact">
   <div class="wrap">
-    <h2>Open to technical lead and architecture roles.</h2>
+    <h2>Open to technical lead, engineering management and architecture roles.</h2>
     <p style="max-width:56ch;margin-top:16px">Odoo ERP, B2B commerce, enterprise integration — remote, or on-site in the Gulf. Happy to walk through any system on this page in detail.</p>
     <div class="links">
       <a href="mailto:abdelrazek.orcl@gmail.com">abdelrazek.orcl@gmail.com</a>

@@ -7,6 +7,50 @@
   var $ = function (s, r) { return (r || document).querySelector(s); };
   var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
 
+  /* ---------- experience at a glance ---------- */
+
+  (function experience() {
+    var host = $("#xp");
+    if (!host || typeof EXPERIENCE === "undefined") return;
+    var max = EXPERIENCE.scaleMax;
+    var ticks = [];
+    for (var t = 0; t <= max; t += 4) ticks.push(t);
+
+    // One bar, or consecutive segments (oldest first) when the item is split into parts.
+    function bars(it) {
+      if (!it.parts) return '<span class="xp-bar" style="--v:' + (it.years / max) + '"></span>';
+      var at = 0;
+      return it.parts.map(function (p, i) {
+        var html = '<span class="xp-bar xp-seg' + (i < it.parts.length - 1 ? " xp-seg-old" : "") +
+          '" style="--x:' + (at / max) + ";--v:" + (p.years / max) + '"></span>';
+        at += p.years;
+        return html;
+      }).join("");
+    }
+
+    host.innerHTML = EXPERIENCE.groups.map(function (g) {
+      return '<figure class="xp-panel xp-' + g.id + '">' +
+        '<figcaption><i aria-hidden="true"></i>' + g.title + "</figcaption>" +
+        '<ul class="xp-rows">' + g.items.map(function (it) {
+          var yrs = it.years + (it.years === 1 ? " year" : " years");
+          return '<li class="xp-row" tabindex="0" aria-label="' + it.label + ": " + yrs +
+            (it.note ? ". " + it.note : "") + '">' +
+            '<span class="xp-label">' + it.label +
+              (it.note ? '<small>' + it.note + "</small>" : "") + "</span>" +
+            '<span class="xp-track" aria-hidden="true">' + bars(it) + '</span>' +
+            '<span class="xp-val" aria-hidden="true">' + it.years + "<em> yr" + (it.years === 1 ? "" : "s") + "</em></span>" +
+            '<span class="xp-tip" aria-hidden="true"><b>' + it.label + "</b> · " + yrs + "</span>" +
+            "</li>";
+        }).join("") + "</ul>" +
+        '<div class="xp-axis" aria-hidden="true"><span></span><span class="xp-ticks">' +
+          ticks.map(function (t) {
+            return '<span' + (t % 8 ? ' class="minor"' : "") + ' style="left:' + (t / max * 100) + '%">' + t + "</span>";
+          }).join("") +
+        "</span><span></span></div>" +
+        "</figure>";
+    }).join("");
+  })();
+
   /* ---------- timeline ---------- */
 
   function tagList(tags) {
