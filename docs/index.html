@@ -179,6 +179,8 @@ a{color:inherit}
 .tl2-phases span{display:block;font-size:13.5px;color:#9FB0C6;margin-top:6px;line-height:1.45}
 .tl2-phases ul{list-style:none;margin:8px 0 0;padding:0;display:grid;gap:5px}
 .tl2-phases ul li{display:grid;grid-template-columns:4.2em 1fr;gap:0 6px;background:none;border:0;padding:0;font-size:13px;color:#9FB0C6;line-height:1.4}
+.tl2-phases ul.dots li{display:block;position:relative;padding-left:13px}
+.tl2-phases ul.dots li::before{content:"";position:absolute;left:1px;top:.6em;width:5px;height:5px;border-radius:50%;background:var(--c)}
 .tl2-phases ul em{display:block;font-style:normal;font-variant-numeric:tabular-nums;color:#7E8FA8}
 .tl2-phases .now{float:right;font-style:normal;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);background:var(--c);border-radius:99px;padding:1px 8px;margin:0}
 .p1{--c:#3987E5}.p2{--c:#D95926}.p3{--c:#1FA596}.p4{--c:#BF8724}
@@ -462,9 +464,32 @@ footer .fine{margin-top:38px;font-size:13.5px;color:#73849C;border-top:1px solid
             <li><em>2012</em> ITI diploma — 9-month software development</li>
             <li><em>2012–13</em> Enterprise healthcare system, ACS</li>
           </ul></li>
-        <li class="p2"><i>Nov 2013 – May 2015 · 1.5 years</i><b>Laplace Software, Egypt</b><span>Joined Laplace — ERP desktop systems in C#/.NET and DevExpress XAF: university lab, stock and property management</span></li>
-        <li class="p3"><i>May 2015 – Oct 2025 · 10 years</i><b>Riyadh, Saudi Arabia — on-site</b><span>Placed by Laplace with Qwaed Technologies and Genius Valley — ministries, STC, King Saud University; moved to Odoo in 2020</span></li>
-        <li class="p4"><i>Nov 2025 – present <em class="now">Now</em></i><b>SAMTIA &amp; Advanced Photonix — remote</b><span>B2B e-commerce on Odoo + Next.js</span></li>
+        <li class="p2"><i>Nov 2013 – May 2015 · 1.5 years</i><b>Laplace Software, Egypt</b>
+          <span>ERP desktop systems — C#/.NET, DevExpress XAF, SQL Server</span>
+          <ul class="dots">
+            <li>University laboratory system — Kafr El-Sheikh University</li>
+            <li>Stock management system</li>
+            <li>Property management system</li>
+          </ul></li>
+        <li class="p3"><i>May 2015 – Oct 2025 · 10 years</i><b>Riyadh, Saudi Arabia — on-site</b>
+          <span>Placed by Laplace with Qwaed Technologies and Genius Valley</span>
+          <ul>
+            <li><em>2015–23</em> Biometric attendance, King Saud University — 10,000 employees, 300 devices</li>
+            <li><em>2015–25</em> Document &amp; task management with iPad app, Ministry of Interior</li>
+            <li><em>2018–25</em> Biometric attendance, STC — 500 employees, 50 devices</li>
+            <li><em>2020–23</em> Odoo EMR with NPHIES, BinRush Ophthalmic — the move to Odoo</li>
+            <li><em>2024–25</em> Visitor management, Ministry of Economy &amp; Planning</li>
+            <li><em>2024–25</em> Odoo access management suite — MDU, IoT, Omada &amp; RUCKUS</li>
+          </ul></li>
+        <li class="p4"><i>Nov 2025 – present <em class="now">Now</em></i><b>SAMTIA &amp; Advanced Photonix — remote</b>
+          <span>B2B e-commerce platform on Odoo + Next.js</span>
+          <ul class="dots">
+            <li>Customer portal — Next.js</li>
+            <li>Account management portal — Next.js</li>
+            <li>B2B integration API for Odoo</li>
+            <li>Odoo ERP backend customization</li>
+            <li>OWL dashboards</li>
+          </ul></li>
       </ol>
       <figcaption class="cap">Career timeline — foundations in Egypt → Laplace (Nov 2013) → ten years on-site in Riyadh → SAMTIA B2B platform.</figcaption>
     </figure>
