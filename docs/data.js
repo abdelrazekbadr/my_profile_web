@@ -125,7 +125,7 @@ var TIMELINE = [
     flag: "",
     years: "2010",
     role: "Software Developer — graduate",
-    org: "Mansoura University and first client projects — Egypt",
+    org: "Mansoura University — Egypt",
     note: "",
     points: [
       "Built a face-recognition system in C# with OpenCV as the BSc graduation project, and became an IEEE contributor through this work.",
