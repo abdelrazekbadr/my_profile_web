@@ -60,7 +60,7 @@
     }).join("") + "</div>";
   }
 
-  function renderTimeline(era) {
+  function renderTimeline(era, view) {
     var host = $("#timeline");
     if (!host) return;
     var rows = TIMELINE.filter(function (e) { return era === "all" || e.era === era; });
@@ -68,11 +68,14 @@
     host.innerHTML = rows.map(function (e, i) {
       var cls = "entry" + (e.flag === "now" ? " is-now" : e.flag === "odoo" ? " is-odoo" : "");
       var id = "e" + i;
+      var showDelivery = view === "delivery" && e.delivery && e.delivery.length;
+      var bullets = showDelivery ? e.delivery : e.points;
       return '<article class="' + cls + '">' +
         '<p class="yr">' + e.years + "</p>" +
         "<h3>" + e.role + "</h3>" +
         '<p class="org">' + e.org + (e.note ? ' — <em>' + e.note + "</em>" : "") + "</p>" +
-        "<ul>" + e.points.map(function (p) { return "<li>" + p + "</li>"; }).join("") + "</ul>" +
+        (showDelivery ? '<p class="viewlabel">Delivery focus</p>' : "") +
+        "<ul>" + bullets.map(function (p) { return "<li>" + p + "</li>"; }).join("") + "</ul>" +
         (e.more
           ? '<details class="disc"><summary id="' + id + '">More on this</summary>' +
             '<div class="body"><p>' + e.more + "</p></div></details>"
@@ -82,14 +85,27 @@
     }).join("");
   }
 
+  var currentEra = "all";
+  var currentView = "tech";
+  function renderCurrentTimeline() { renderTimeline(currentEra, currentView); }
+
   $$(".era").forEach(function (btn) {
     btn.addEventListener("click", function () {
       $$(".era").forEach(function (b) { b.setAttribute("aria-selected", String(b === btn)); });
-      renderTimeline(btn.dataset.era);
+      currentEra = btn.dataset.era;
+      renderCurrentTimeline();
     });
   });
 
-  renderTimeline("all");
+  $$(".viewtab").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      $$(".viewtab").forEach(function (b) { b.setAttribute("aria-selected", String(b === btn)); });
+      currentView = btn.dataset.view;
+      renderCurrentTimeline();
+    });
+  });
+
+  renderCurrentTimeline();
 
   /* ---------- employment chain: employer -> placement -> their customers ---------- */
 
@@ -158,12 +174,25 @@
 
     var active = [];
 
+    function deliveryBlock(p) {
+      if (!p.objective && !p.myRole && !(p.delivery && p.delivery.length)) return "";
+      return '<details class="disc proj-delivery"><summary>Delivery details</summary>' +
+        '<div class="body">' +
+        (p.objective ? "<p><b>Objective:</b> " + p.objective + "</p>" : "") +
+        (p.myRole ? "<p><b>My role:</b> " + p.myRole + "</p>" : "") +
+        (p.delivery && p.delivery.length
+          ? "<ul>" + p.delivery.map(function (d) { return "<li>" + d + "</li>"; }).join("") + "</ul>"
+          : "") +
+        "</div></details>";
+    }
+
     host.innerHTML = PROJECTS.map(function (p, i) {
       return '<article class="proj" data-i="' + i + '">' +
         '<p class="kind">' + p.kind + "</p>" +
         "<h3>" + p.name + "</h3>" +
         '<p class="who">' + p.who + "</p>" +
         "<p>" + p.text + "</p>" +
+        deliveryBlock(p) +
         tagList(p.tags) +
         "</article>";
     }).join("");

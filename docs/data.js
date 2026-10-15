@@ -2,6 +2,16 @@
    All page content lives here. Edit this file to update the site.
    --------------------------------------------------------------- */
 
+/* TODO — open questions to confirm before filling in further (left unanswered,
+   not guessed):
+   1. Laplace Egypt branch management: exact years and official title?
+   2. Vendor management: which vendors, and what scope?
+   3. Odoo major-version upgrades (v15 -> v19): did I plan or lead them as projects?
+   4. Date mismatches to resolve (not changed here): Laplace start — Nov 2013 on
+      this site vs 2014 on the CV; ITI diploma — 2012 on this site vs 2013 on the
+      CV; SAMTIA start — Nov 2025.
+*/
+
 /* Experience at a glance — years per role and per engineering area.
    Both panels share one 0–scaleMax axis so bar lengths compare across them. */
 var EXPERIENCE = {
@@ -47,6 +57,11 @@ var TIMELINE = [
       "Own the core B2B financial and accounting workflows in Odoo and resolve production-critical issues across the platform — including a WebSocket frame-ordering fault affecting the client portal.",
       "Introduced a weighted performance evaluation framework for the team, and brought AI-assisted development and workflow automation into daily delivery and reporting."
     ],
+    delivery: [
+      "Run sprint delivery through Azure DevOps across two engineering teams.",
+      "Standardised a multi-environment Odoo.sh release process — development, regression, UAT, production — automated with GitHub Actions.",
+      "Lead production incident response, including a WebSocket frame-ordering fault, and post-incident analysis."
+    ],
     more: "Two portal audiences sit in front of one ERP: enterprise buyers on the customer portal, and account managers on their own portal. Odoo Enterprise is the system of record on PostgreSQL; Next.js and TypeScript carry the experience layer. Releases move through five Odoo.sh environments so a regression never reaches a buyer.",
     tags: ["Odoo 18/19", "Python", "Next.js", "TypeScript", "PostgreSQL", "Odoo.sh", "Azure DevOps", "GitHub Actions", "Docker"]
   },
@@ -63,6 +78,11 @@ var TIMELINE = [
       "Designed and packaged the Access Management System (AMS) suite on Odoo — modular addons for visitor management, access control, time and attendance, MDU, secretary workflow and IoT school sound systems — with a Docker-based client release pipeline.",
       "Built and published a Saudi ZATCA e-invoicing compliance module on the Odoo App Store, reaching 5,880 downloads, alongside an Egyptian Tax Authority compliance integration.",
       "Migrated the delivery stack from legacy C#/.NET and DevExpress XAF to Odoo/Python and modern JavaScript, progressing from individual contributor to technical lead while running client requirements workshops, on-site deployment and UAT in Arabic and English."
+    ],
+    delivery: [
+      "Ran requirements workshops and on-site UAT sign-off in Arabic and English across the Ministry of Interior, Ministry of Economy and Planning, STC and King Saud University engagements, managing scope, defects and acceptance criteria.",
+      "Presented technical trade-offs and delivery roadmaps to executive and operations leadership.",
+      "Led delivery and architecture across four concurrent enterprise and government engagements at once."
     ],
     more: "Laplace holds my contract; Qwaed Technologies and Genius Valley hold the contracts with the end customers. Ten years of this was spent as the outsourced implementation partner rather than the client — running requirements workshops, deploying on site, and taking UAT sign-off from ministries and a national telecom. For any role that involves managing a vendor, that is the same relationship seen from the other side. The pivot to Odoo happened inside this period, in 2020, on a clinical EMR.",
     tags: ["Odoo", "Python", "OWL", "PostgreSQL", "C#/.NET", "DevExpress XAF", "BioStar2 API", "Docker", "ZATCA"]
@@ -187,14 +207,26 @@ var PROJECTS = [
     kind: "Enterprise",
     who: "SAMTIA, KSA · Software Architect & Team Lead · Nov 2025 – present",
     text: "An Odoo + Next.js commerce ecosystem integrating ERP, buyer portal, account-manager operations, pricing, orders, permissions and reporting.",
-    tags: ["Odoo", "Python", "Next.js", "TypeScript", "PostgreSQL", "Odoo.sh", "Azure DevOps", "Docker"]
+    objective: "Own end-to-end delivery and architecture of an Odoo + Next.js B2B commerce platform serving enterprise buyers.",
+    myRole: "Software Architect & Team Lead — owns delivery, release process and production quality across two engineering teams.",
+    delivery: [
+      "Run sprint delivery through Azure DevOps across two engineering teams.",
+      "Standardised a multi-environment Odoo.sh release process — development, regression, UAT, production — automated with GitHub Actions.",
+      "Lead production incident response, including a WebSocket frame-ordering fault, and post-incident analysis."
+    ],
+    tags: ["Odoo", "Python", "Next.js", "TypeScript", "PostgreSQL", "Odoo.sh", "Azure DevOps", "Docker", "Agile / Scrum", "Release Management"]
   },
   {
     name: "Access Management System (AMS) suite",
     kind: "Enterprise",
     who: "KSA enterprise clients · Technical Team Lead · 2024 – 2025",
     text: "A productized modular Odoo suite — ams_base, ams_bs, ams_vm, ams_mep and OTP login — covering visitor management, access control, time and attendance, MDU and IoT school sound systems, with Omada and RUCKUS network integrations, packaged with a Docker release pipeline and Suprema biometric integration.",
-    tags: ["Odoo", "Python", "OWL", "JavaScript", "PostgreSQL", "React Native", "Docker", "BioStar2 API"]
+    objective: "Productize visitor management, access control, time & attendance and IoT modules into one modular Odoo suite for KSA enterprise clients.",
+    myRole: "Technical Team Lead — owned packaging, release engineering and delivery of the product suite across clients.",
+    delivery: [
+      "Built a Docker-based client release pipeline to package and deploy the modular suite across multiple enterprise clients."
+    ],
+    tags: ["Odoo", "Python", "OWL", "JavaScript", "PostgreSQL", "React Native", "Docker", "BioStar2 API", "Release Management"]
   },
   {
     name: "Biometric time &amp; attendance",
@@ -208,13 +240,24 @@ var PROJECTS = [
     kind: "Enterprise",
     who: "Ministry of Interior, KSA · 2015 – 2025",
     text: "Secure iPad document circulation and task management for ministerial executive leadership, backed by a WCF service layer and enterprise identity controls.",
-    tags: ["C#", "WCF", "DevExpress XAF", "Ionic", "Angular", "SQL Server", "iOS"]
+    objective: "Deliver secure document circulation and task management for ministerial executive leadership.",
+    myRole: "Led architecture and delivery of the system for the Ministry of Interior engagement.",
+    delivery: [
+      "Ran requirements workshops and on-site UAT sign-off directly with Ministry of Interior stakeholders, managing scope, defects and acceptance criteria to go-live.",
+      "Presented technical trade-offs and delivery roadmaps to executive and operations leadership."
+    ],
+    tags: ["C#", "WCF", "DevExpress XAF", "Ionic", "Angular", "SQL Server", "iOS", "UAT", "Stakeholder Management"]
   },
   {
     name: "Electronic medical record",
     kind: "Enterprise",
     who: "BinRush Ophthalmic Center, KSA · Software Architect & Team Lead · 2020 – 2023",
     text: "A specialist ophthalmic EMR on Odoo covering outpatient and inpatient clinical workflows, patient records and reporting, with insurance claims integrated through the Saudi NPHIES national health information exchange.",
+    objective: "Deliver a specialist ophthalmic EMR covering outpatient and inpatient clinical workflows, with insurance claims integrated through the Saudi NPHIES exchange.",
+    myRole: "Software Architect & Team Lead — owned architecture, clinical workflow design and delivery of the NPHIES integration.",
+    delivery: [
+      "Delivered within the broader KSA engagement portfolio, run through requirements workshops and on-site UAT sign-off across ministries, telecom and university clients during this period."
+    ],
     tags: ["Odoo", "Python", "JavaScript", "OWL", "PostgreSQL", "NPHIES"]
   },
   {
@@ -248,9 +291,13 @@ var PROJECTS = [
 ];
 
 /* Chips offered in the Work filter, in display order. */
-var FILTER_TAGS = ["Odoo", "Python", "Next.js", "TypeScript", "PostgreSQL", "Docker", "React Native", "C#/.NET", "BioStar2 API"];
+var FILTER_TAGS = ["Odoo", "Python", "Next.js", "TypeScript", "PostgreSQL", "Docker", "React Native", "C#/.NET", "BioStar2 API", "Agile / Scrum", "UAT", "Release Management", "Stakeholder Management"];
 
 var SKILLS = [
+  {
+    group: "Project & delivery management",
+    items: ["Agile / Scrum", "Sprint delivery (Azure DevOps)", "Requirements workshops", "Scope & acceptance criteria", "Stakeholder management", "UAT", "Release management", "Defect & incident management", "Post-incident analysis", "Technical roadmaps", "Hiring & performance management", "Distributed teams"]
+  },
   {
     group: "ERP & backend",
     items: ["Odoo ERP v15–v19 (Community & Enterprise)", "Custom addon development", "Odoo ORM", "Models", "Controllers", "Security rules", "Wizards", "QWeb reports", "Scheduled actions", "Python", "Flask", "RESTful API design", "B2B commerce workflows", "Financial & accounting workflows", "MVC", "MVVM", "SOA", "OOP design patterns"]

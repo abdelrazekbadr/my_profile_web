@@ -3,17 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Abdelrazek Elsaied Badr — Senior Software Engineer | Technical Lead | Software Architect | Odoo &amp; Full-Stack Engineering</title>
-<meta name="description" content="Software Architect and Technical Lead with 15+ years of hands-on experience building and modernizing enterprise systems across ERP, B2B e-commerce, healthcare, government, and telecom. Deep expertise in Odoo/Python, full-stack architecture, enterprise integration, and cloud-native delivery. Leads distributed engineering teams while remaining hands-on in architecture, technical direction, and production delivery.">
+<title>Abdelrazek Elsaied Badr — Senior Software Engineer | Technical Lead | Software Architect | Technical Project Manager | Odoo &amp; Full-Stack Engineering</title>
+<meta name="description" content="Software Architect, Technical Lead and Technical Project Manager with 15+ years of hands-on experience building and modernizing enterprise systems across ERP, B2B e-commerce, healthcare, government, and telecom. Deep expertise in Odoo/Python, full-stack architecture, enterprise integration, and cloud-native delivery. Runs requirements workshops, sprint delivery, release management and UAT sign-off while leading distributed engineering teams.">
 <meta name="author" content="Abdelrazek Elsaied Badr">
 <link rel="canonical" href="https://abdelrazekbadr.github.io/my_profile_web/">
 <meta property="og:type" content="profile">
-<meta property="og:title" content="Abdelrazek Elsaied Badr — Senior Software Engineer | Technical Lead | Software Architect | Odoo &amp; Full-Stack Engineering">
-<meta property="og:description" content="Software Architect and Technical Lead with 15+ years of hands-on experience building and modernizing enterprise systems across ERP, B2B e-commerce, healthcare, government, and telecom. Deep expertise in Odoo/Python, full-stack architecture, enterprise integration, and cloud-native delivery. Leads distributed engineering teams while remaining hands-on in architecture, technical direction, and production delivery.">
+<meta property="og:title" content="Abdelrazek Elsaied Badr — Senior Software Engineer | Technical Lead | Software Architect | Technical Project Manager | Odoo &amp; Full-Stack Engineering">
+<meta property="og:description" content="Software Architect, Technical Lead and Technical Project Manager with 15+ years of hands-on experience building and modernizing enterprise systems across ERP, B2B e-commerce, healthcare, government, and telecom. Deep expertise in Odoo/Python, full-stack architecture, enterprise integration, and cloud-native delivery. Runs requirements workshops, sprint delivery, release management and UAT sign-off while leading distributed engineering teams.">
 <meta property="og:image" content="https://abdelrazekbadr.github.io/my_profile_web/og-card.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Abdelrazek Elsaied Badr — Senior Software Engineer | Technical Lead | Software Architect | Odoo &amp; Full-Stack Engineering">
-<meta name="twitter:description" content="Software Architect and Technical Lead with 15+ years of hands-on experience building and modernizing enterprise systems across ERP, B2B e-commerce, healthcare, government, and telecom. Deep expertise in Odoo/Python, full-stack architecture, enterprise integration, and cloud-native delivery. Leads distributed engineering teams while remaining hands-on in architecture, technical direction, and production delivery.">
+<meta name="twitter:title" content="Abdelrazek Elsaied Badr — Senior Software Engineer | Technical Lead | Software Architect | Technical Project Manager | Odoo &amp; Full-Stack Engineering">
+<meta name="twitter:description" content="Software Architect, Technical Lead and Technical Project Manager with 15+ years of hands-on experience building and modernizing enterprise systems across ERP, B2B e-commerce, healthcare, government, and telecom. Deep expertise in Odoo/Python, full-stack architecture, enterprise integration, and cloud-native delivery. Runs requirements workshops, sprint delivery, release management and UAT sign-off while leading distributed engineering teams.">
 <meta name="twitter:image" content="https://abdelrazekbadr.github.io/my_profile_web/og-card.png">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230E1622'/%3E%3Cpath d='M18 46V18h10a9 9 0 0 1 0 18H18' stroke='%23B4801F' stroke-width='5' fill='none' stroke-linecap='round'/%3E%3Cpath d='M32 36l12 10' stroke='%23F4F6F9' stroke-width='5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230E1622'/%3E%3Cpath d='M18 46V18h10a9 9 0 0 1 0 18H18' stroke='%23B4801F' stroke-width='5' fill='none' stroke-linecap='round'/%3E%3Cpath d='M32 36l12 10' stroke='%23F4F6F9' stroke-width='5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
@@ -99,8 +99,10 @@ a{color:inherit}
   color:var(--white);font-size:clamp(28px,4.4vw,46px);letter-spacing:-.01em;
   font-weight:700;max-width:32ch;line-height:1.2;
 }
+.hero .role-line{font-size:14px;letter-spacing:.07em;text-transform:uppercase;color:var(--brass);margin-top:18px;font-weight:600}
 .hero .lede{font-size:clamp(17px,2.1vw,21px);max-width:56ch;margin-top:22px;color:#B9C5D6}
 .hero .lede b{color:var(--white);font-weight:600}
+.hero .delivery-tag{font-size:16px;font-style:italic;color:#C7D2E0;max-width:56ch;margin-top:14px}
 .hero .meta{
   display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:26px;font-size:15px;color:#8FA0B8;
 }
@@ -202,12 +204,12 @@ section{padding:clamp(60px,8vw,104px) 0}
 
 /* ---------- era switch ---------- */
 .eras{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:34px}
-.era{
+.era,.viewtab{
   font:inherit;font-size:14.5px;cursor:pointer;background:transparent;color:var(--muted);
   border:1px solid var(--line);border-radius:999px;padding:8px 16px;transition:.18s;
 }
-.era:hover{color:var(--ink);border-color:#A9B6C7}
-.era[aria-selected="true"]{background:var(--ink);border-color:var(--ink);color:var(--white)}
+.era:hover,.viewtab:hover{color:var(--ink);border-color:#A9B6C7}
+.era[aria-selected="true"],.viewtab[aria-selected="true"]{background:var(--ink);border-color:var(--ink);color:var(--white)}
 
 /* ---------- timeline rail ---------- */
 .tl{--off:38px;position:relative;padding-left:var(--off)}
@@ -230,6 +232,7 @@ section{padding:clamp(60px,8vw,104px) 0}
 .entry h3{font-size:clamp(20px,2.6vw,25px);margin-top:3px}
 .entry .org{font-size:15.5px;color:var(--muted);margin-top:4px}
 .entry .org em{font-style:normal;color:var(--teal);font-weight:500}
+.entry .viewlabel{font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--teal);margin:14px 0 0}
 .entry ul{margin:14px 0 0;padding-left:1.15em}
 .entry li{margin-bottom:9px;max-width:74ch}
 .entry li::marker{color:#9FAEC2}
@@ -251,6 +254,16 @@ section{padding:clamp(60px,8vw,104px) 0}
   background:var(--surface);color:var(--muted);white-space:nowrap;
 }
 .alt .tag{background:#E1E7EF}
+
+/* ---------- how I deliver ---------- */
+.deliver-grid{display:grid;gap:18px;grid-template-columns:1fr}
+@media(min-width:720px){.deliver-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1040px){.deliver-grid{grid-template-columns:repeat(3,1fr)}}
+.deliver-card{background:var(--white);border:1px solid var(--line);border-radius:10px;padding:22px}
+.deliver-card h3{font-size:18px}
+.deliver-card p{font-size:14.5px;color:var(--muted);margin:10px 0 0}
+.deliver-card .ex{font-size:13.5px;color:var(--body);margin:12px 0 0;padding-top:12px;border-top:1px solid var(--line);line-height:1.5}
+.deliver-card .ex b{color:var(--ink);font-weight:600}
 
 /* ---------- employment chain ---------- */
 .chain{display:grid;gap:0}
@@ -424,6 +437,7 @@ footer .fine{margin-top:38px;font-size:13.5px;color:#73849C;border-top:1px solid
   <div class="wrap">
     <a class="mark" href="#top">Abdelrazek Badr</a>
     <nav id="nav" aria-label="Sections">
+      <a href="#deliver">How I Deliver</a>
       <a href="#career">Career</a>
       <a href="#structure">Delivery model</a>
       <a href="#work">Work</a>
@@ -437,12 +451,15 @@ footer .fine{margin-top:38px;font-size:13.5px;color:#73849C;border-top:1px solid
 <header class="hero" id="top">
   <div class="wrap">
     <h1>Senior Software Engineer | Technical Lead | Software Architect | Odoo &amp; Full-Stack Engineering</h1>
+    <p class="role-line">Software Architect · Technical Lead · Technical Project Manager</p>
     <p class="lede">Software Architect and Technical Lead with 15+ years of hands-on experience building and modernizing enterprise systems across ERP, B2B e-commerce, healthcare, government, and telecom. Deep expertise in Odoo/Python, full-stack architecture, enterprise integration, and cloud-native delivery. Leads distributed engineering teams while remaining hands-on in architecture, technical direction, and production delivery.</p>
+    <p class="delivery-tag">I take enterprise software from requirements workshop to production, and lead the team that ships it.</p>
     <p class="meta">
       <span>New Mansoura City, Egypt</span>
       <a href="mailto:abdelrazek.orcl@gmail.com">abdelrazek.orcl@gmail.com</a>
       <a href="https://www.linkedin.com/in/abdelrazek-e-badr-13663558" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="resume.pdf" download>Download résumé (PDF)</a>
+      <a href="resume.pdf" download>CV — Architect / Tech Lead (PDF)</a>
+      <a href="assets/Abdelrazek_Badr_CV_2026_TPM.pdf" download>CV — Technical Project Manager (PDF)</a>
     </p>
 
     <figure class="railfig">
@@ -511,6 +528,48 @@ footer .fine{margin-top:38px;font-size:13.5px;color:#73849C;border-top:1px solid
 
 <main>
 
+<section id="deliver" class="alt">
+  <div class="wrap">
+    <div class="sechead">
+      <h2>How I Deliver</h2>
+      <p>Technical direction is half the job. The other half is getting requirements, a release and a team to the same finish line on schedule.</p>
+    </div>
+
+    <div class="deliver-grid">
+      <article class="deliver-card">
+        <h3>Requirements &amp; Stakeholders</h3>
+        <p>Workshops that turn an ambiguous ask into signed-off scope and acceptance criteria.</p>
+        <p class="ex"><b>Example:</b> Ran requirements workshops across the Ministry of Interior, Ministry of Economy and Planning, STC and King Saud University, presenting technical trade-offs and delivery roadmaps to executive leadership.</p>
+      </article>
+      <article class="deliver-card">
+        <h3>Agile Delivery</h3>
+        <p>Sprint-based delivery coordinated across more than one engineering team.</p>
+        <p class="ex"><b>Example:</b> Run sprint delivery through Azure DevOps across two engineering teams on the SAMTIA B2B platform.</p>
+      </article>
+      <article class="deliver-card">
+        <h3>Release Management</h3>
+        <p>A release process that catches a regression before it reaches a buyer.</p>
+        <p class="ex"><b>Example:</b> Standardised a multi-environment Odoo.sh pipeline — development, regression, UAT, production — automated with GitHub Actions.</p>
+      </article>
+      <article class="deliver-card">
+        <h3>UAT &amp; Sign-off</h3>
+        <p>Bilingual acceptance testing, run on-site, taken through to formal sign-off.</p>
+        <p class="ex"><b>Example:</b> Took on-site UAT sign-off from ministries and a national telecom in Arabic and English, managing scope, defects and acceptance criteria.</p>
+      </article>
+      <article class="deliver-card">
+        <h3>Incident &amp; Quality</h3>
+        <p>Owning a production issue through root cause, not just the symptom.</p>
+        <p class="ex"><b>Example:</b> Led response to a WebSocket frame-ordering fault on the SAMTIA client portal, including post-incident analysis.</p>
+      </article>
+      <article class="deliver-card">
+        <h3>Team Leadership</h3>
+        <p>Hiring, onboarding and performance — not only code review.</p>
+        <p class="ex"><b>Example:</b> Lead a distributed team of 4–8 engineers across Egyptian and Saudi time zones, using a weighted performance evaluation framework.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
 <section id="career">
   <div class="wrap">
     <div class="sechead">
@@ -523,6 +582,11 @@ footer .fine{margin-top:38px;font-size:13.5px;color:#73849C;border-top:1px solid
       <button class="era" role="tab" data-era="now" aria-selected="false">2025 – present · SAMTIA</button>
       <button class="era" role="tab" data-era="ksa" aria-selected="false">2015 – 2025 · Saudi Arabia</button>
       <button class="era" role="tab" data-era="early" aria-selected="false">2010 – 2015 · Foundations</button>
+    </div>
+
+    <div class="eras" role="tablist" aria-label="Timeline detail" style="margin-bottom:22px">
+      <button class="viewtab" role="tab" data-view="tech" aria-selected="true">Technical view</button>
+      <button class="viewtab" role="tab" data-view="delivery" aria-selected="false">Delivery view</button>
     </div>
 
     <div class="tl" id="timeline"></div>
@@ -643,18 +707,19 @@ footer .fine{margin-top:38px;font-size:13.5px;color:#73849C;border-top:1px solid
 
 <footer id="contact">
   <div class="wrap">
-    <h2>Open to technical lead, engineering management and architecture roles.</h2>
+    <h2>Open to technical lead, architecture and technical project / delivery management roles.</h2>
     <p style="max-width:56ch;margin-top:16px">Odoo ERP, B2B commerce, enterprise integration — remote, or on-site in the Gulf. Happy to walk through any system on this page in detail.</p>
     <div class="links">
       <a href="mailto:abdelrazek.orcl@gmail.com">abdelrazek.orcl@gmail.com</a>
       <a href="https://www.linkedin.com/in/abdelrazek-e-badr-13663558" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="resume.pdf" download>Download résumé (PDF)</a>
+      <a href="resume.pdf" download>CV — Architect / Tech Lead (PDF)</a>
+      <a href="assets/Abdelrazek_Badr_CV_2026_TPM.pdf" download>CV — Technical Project Manager (PDF)</a>
     </div>
     <p class="fine">Abdelrazek Elsaied Badr — New Mansoura City, Egypt. Built as a single static page.</p>
   </div>
 </footer>
 
-<script src="data.js?v=20260929"></script>
-<script src="app.js?v=20260928"></script>
+<script src="data.js?v=20261015"></script>
+<script src="app.js?v=20261015"></script>
 </body>
 </html>
